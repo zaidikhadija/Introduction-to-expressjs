@@ -41,4 +41,4 @@ app.get('/Contact',(req,res) => {
             console.log('')
                 res.sendFile(__dirname + "/Public/CSS/style.css")
             }) ;*/
-app.use('/', require ("./routes/api/users"));
+app.use('/api/users', require ("./routes/api/users"));

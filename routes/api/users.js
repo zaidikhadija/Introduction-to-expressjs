@@ -1,10 +1,10 @@
 const express = require('express');
 
 const router = express.Router();
-const users = require ('/../../Users')
+const users = require ('./Users')
 
 router.get('/', (req,res) => {
-    req.send(users);
+    res.send(users);
 });
 
 module.exports = router ;
