@@ -20,8 +20,11 @@ app.get('/Adress',(req,res) => {
     console.log('url',req.url)
     res.send('this is my adress')
 }) ;*/
+const logger = require ("./middelware/logger");
+app.use (logger);
+app.use (express.static(__dirname + "/Public"));
 
-app.get('/',(req,res) => {
+/*app.get('/',(req,res) => {
 console.log('')
     res.sendFile(__dirname + "/Public/HomePage.html")
 }) ;
@@ -37,6 +40,5 @@ app.get('/Contact',(req,res) => {
         app.get('/CSS/style.css',(req,res) => {
             console.log('')
                 res.sendFile(__dirname + "/Public/CSS/style.css")
-            }) ;
-
-
+            }) ;*/
+app.use('/', require ("./routes/api/users"));
